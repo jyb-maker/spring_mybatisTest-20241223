@@ -83,5 +83,16 @@ public class BoardController {
 		return "alert";
 	}
 	
+	@RequestMapping(value = "contentView") // 글 내용 보기
+	public String contentView(HttpServletRequest request, Model model) {
+
+		String bnum = request.getParameter("bnum");//내용을 출력할 글의 번호		
+		
+		BoardDao boardDao = sqlSession.getMapper(BoardDao.class);		
+		BoardDto boardDto = boardDao.contentViewDao(bnum);	
+		model.addAttribute("bDto", boardDto);
+		
+		return "content_view";
+	}
 	
 }

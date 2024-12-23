@@ -13,7 +13,9 @@
 	<!-- 파이썬 문법 : for bDto in bDtos: -->
 	글번호 / 글쓴이 / 글제목 / 게시일 / 조회수<br><br>
 	<c:forEach var="bDto" items="${bDtos }">
-		${bDto.bnum} / ${bDto.bname} / ${bDto.btitle } / ${bDto.bdate} / ${bDto.bhit }<br>
+		<a href="contentView?bnum="${bDto.bnum}"> 
+			${bDto.bnum} / ${bDto.bname} / ${bDto.btitle } / ${bDto.bdate} / ${bDto.bhit }<br>
+		</a>
 	</c:forEach>	
 </body>
 </html>
