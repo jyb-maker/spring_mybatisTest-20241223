@@ -5,15 +5,18 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.jbedu.mybatis.dao.BoardDao">
-
+	
 	<insert id="boardWriteDao">
-		INSERT INTO mvc_board(bname,btitle,bcontent,bhit) VALUES (#{param1},#{param2},#{param3},0)
+		INSERT INTO mvc_board(bname, btitle, bcontent, bhit) VALUES (#{param1},#{param2},#{param3},0)
 	</insert>
-
+	
 	<select id="boardListDao" resultType="com.jbedu.mybatis.dto.BoardDto">
 		SELECT * FROM mvc_board ORDER BY bnum DESC
 	</select>
-
+	
+	<delete id="boardDeleteDao">
+		DELETE FROM mvc_board WHERE bnum=#{param1}
+	</delete>
 
 </mapper>
-
+    
